@@ -33,3 +33,6 @@
 config/deploy
 
 config/wechat.yml
+
+# ignore the credentials
+config/credentials.yml.enc
