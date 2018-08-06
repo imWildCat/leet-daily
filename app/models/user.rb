@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   belongs_to :user_group
+  has_many :leetcode_users
 
   before_create :set_user_group_creation
 
