@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>LeetDaily</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -10,6 +11,10 @@
 </head>
 
 <body>
-<%= yield %>
+<%= render 'shared/top_nav' %>
+<div class="container">
+  <%= render partial: 'shared/flash_messages', flash: flash %>
+  <%= yield %>
+</div>
 </body>
 </html>
