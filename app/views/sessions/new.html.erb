@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Sign in</h1>
+    <%= simple_form_for(@user, url: login_path, method: :post, html: {}) do |f| %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.button :submit, value: 'Sign in' %>
+    <% end %>
+  </div>
+</div>
