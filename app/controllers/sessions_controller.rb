@@ -8,8 +8,9 @@ class SessionsController < ApplicationController
 
     user = User.find_by(email: p[:email])
 
-    if user && user.authenticate(params[:session][:password])
+    if user && user.authenticate(p[:password])
       # Log the user in and redirect to the user's show page.
+      set_current_user(user)
       flash[:success] = 'Welcome back, ' + user.username + '!'
     else
       # Create an error message.
@@ -21,6 +22,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    del_current_user
+    flash[:info] = 'You\'ve successfully signed out, bye!'
+    redirect_to root_path
   end
 
   private

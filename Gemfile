@@ -89,6 +89,8 @@ group :development, :test do
   gem 'guard-minitest'
 
   gem 'minitest-reporters'
+
+  gem 'pry-rails'
 end
 
 # Deployment

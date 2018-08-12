@@ -1,4 +1,10 @@
 module ApplicationHelper
+
+  def logged_in?
+    uid = session[:user_id]
+    session[:user_id] != nil
+  end
+
   def bootstrap_alert_class_for(flash_type)
     case flash_type
     when 'success'

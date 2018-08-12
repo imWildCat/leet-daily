@@ -14,7 +14,11 @@
       <%= bs_nav_link 'ho', root_path %>
     </ul>
     <span class="navbar-text">
-      Navbar text with an inline element
+      <% if logged_in? %>
+        <%= link_to 'Sign out', logout_path, method: :delete, class: 'nav-link' %>
+      <% else %>
+        <%= link_to 'Sign in', login_path, class: 'nav-link' %>
+      <% end %>
     </span>
   </div>
 </nav>
