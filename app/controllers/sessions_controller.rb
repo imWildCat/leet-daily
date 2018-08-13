@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to the user's show page.
       set_current_user(user)
       flash[:success] = 'Welcome back, ' + user.username + '!'
+      redirect_to root_path
     else
       # Create an error message.
       flash[:error] = 'Invalid email or password. Please try again.'

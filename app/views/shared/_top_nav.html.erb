@@ -5,20 +5,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <%= bs_nav_link 'ho', root_path %>
+      <%= bs_nav_link 'Home', root_path %>
     </ul>
-    <span class="navbar-text">
+    <ul class="navbar-nav">
       <% if logged_in? %>
-        <%= link_to 'Sign out', logout_path, method: :delete, class: 'nav-link' %>
+        <li class="nav-item">
+          <%= link_to 'Sign out', logout_path, method: :delete, class: 'nav-link' %>
+        </li>
       <% else %>
-        <%= link_to 'Sign in', login_path, class: 'nav-link' %>
+        <%= bs_nav_link 'Sign in', login_path %>
+
       <% end %>
-    </span>
+    </ul>
   </div>
 </nav>

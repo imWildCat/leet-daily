@@ -5,3 +5,6 @@ none:
 
 deploy:
 	 cap production deploy
+
+upload-nginx-config:
+	cap production puma:nginx_config
