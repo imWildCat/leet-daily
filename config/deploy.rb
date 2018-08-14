@@ -51,3 +51,7 @@ set :puma_access_log, "#{release_path}/log/puma.error.log"
 set :puma_error_log, "#{release_path}/log/puma.access.log"
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
+
+# As for the Rails app behind nginx with SSL:
+# https://github.com/rails/rails/issues/22965#issuecomment-172929004
+# To solve the "Request origin does not match request base_url" problem
