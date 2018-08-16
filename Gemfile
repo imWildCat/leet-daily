@@ -102,3 +102,5 @@ end
 
 gem 'sidekiq', '~> 5.2', '>= 5.2.1'
 gem 'sidekiq-cron', '~> 1.0', '>= 1.0.4'
+
+gem 'pundit'

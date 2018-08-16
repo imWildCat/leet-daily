@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+
+  include Pundit
+  
   # New feature:
   # https://evilmartians.com/chronicles/rails-5-2-active-storage-and-beyond
   # http://api.rubyonrails.org/classes/ActiveSupport/CurrentAttributes.html
