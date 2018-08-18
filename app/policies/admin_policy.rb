@@ -7,7 +7,7 @@ class AdminPolicy < ApplicationPolicy
   end
 
   def admin?
-    @user.user_group_id == 999
+    @user&.user_group_id == 999
   end
 
   class Scope < Scope
