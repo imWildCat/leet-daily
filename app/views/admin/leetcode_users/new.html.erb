@@ -1,0 +1,13 @@
+<%= simple_form_for(@leetcode_user, url: admin_leetcode_users_path) do |f| %>
+
+  <h3>Create a new LeetCode user reference</h3>
+
+
+
+  <%= f.error_notification %>
+
+  <%= f.input :leetcode_id, label: 'LeetCode ID' %>
+
+  <%= f.button :submit, 'Create', class: 'btn-primary' %>
+
+<% end %>
