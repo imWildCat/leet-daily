@@ -106,3 +106,6 @@ gem 'sidekiq-cron', '~> 1.0', '>= 1.0.4'
 gem 'pundit'
 
 gem 'active_scaffold'
+
+# ES6 support
+gem 'sprockets', '~> 4.0.0.beta8'
