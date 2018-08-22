@@ -1,0 +1,13 @@
+<%= simple_form_for(@leetcode_user, url: admin_leetcode_user_path) do |f| %>
+
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :leetcode_id, label: 'LeetCode ID' %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn-primary' %>
+  </div>
+<% end %>

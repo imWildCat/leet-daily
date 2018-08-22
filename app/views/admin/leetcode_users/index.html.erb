@@ -10,6 +10,7 @@
     <th>
       Joining time
     </th>
+    <th colspan="3">Actions</th>
   </tr>
   </thead>
   <tbody>
@@ -18,6 +19,8 @@
       <td><%= u.id %></td>
       <td><%= u.leetcode_id %></td>
       <td><%= time_ago_in_words(u.created_at) %></td>
+      <td><%= link_to 'Edit', edit_admin_leetcode_user_path(u) %></td>
+
     </tr>
   <% end %>
   </tbody>
