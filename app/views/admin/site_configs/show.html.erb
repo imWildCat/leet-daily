@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div>
+  
+  <p>
+    <span>Key:</span> <span><%= @admin_site_config.key %></span>
+  </p>
+  <p>
+    <span>Value:</span> <span><%= @admin_site_config.value %></span>
+  </p>
+</div>
+
 
 <%= link_to 'Edit', edit_admin_site_config_path(@admin_site_config) %> |
 <%= link_to 'Back', admin_site_configs_path %>
