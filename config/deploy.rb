@@ -22,7 +22,9 @@ set :repo_url, 'https://github.com/imWildCat/leet-daily.git'
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
-append :linked_files, 'config/database.yml', 'config/master.key', 'config/credentials.yml.enc'
+append :linked_files, 'config/database.yml', 'config/master.key'
+
+before 'deploy:check:linked_files', 'deploy:copy_file'
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
@@ -55,3 +57,14 @@ set :puma_worker_timeout, nil
 # As for the Rails app behind nginx with SSL:
 # https://github.com/rails/rails/issues/22965#issuecomment-172929004
 # To solve the "Request origin does not match request base_url" problem
+
+namespace :deploy do
+  desc 'Copy files'
+  task :copy_file do
+    on roles(:all) do |host|
+      ['credentials.yml.enc'].each do |f|
+        upload! './config/' + f , "#{shared_path}/config/" + f
+      end
+    end
+  end
+end

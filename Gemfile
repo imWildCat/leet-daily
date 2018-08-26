@@ -112,3 +112,4 @@ gem 'sprockets', '~> 4.0.0.beta8'
 
 # SendGrid action mailer
 gem 'sendgrid-actionmailer', github: 'eddiezane/sendgrid-actionmailer'
+
