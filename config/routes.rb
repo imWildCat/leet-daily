@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
   namespace :account do
-    get 'forget_password/edit'
-    get 'forget_password/update'
+    get 'forget_passwords/edit'
+    get 'forget_passwords/update'
   end
+  # namespace :account do
+  #   get 'forget_password/edit'
+  #   get 'forget_password/update'
+  # end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'home#index'

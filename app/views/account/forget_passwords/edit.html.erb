@@ -1,0 +1,9 @@
+<%= simple_form_for @user, method: :patch, url: account_forget_password_path do |f| %>
+  <h1>Set password: <%= @user.username %></h1>
+  <div class="form-inputs">
+    <%= f.input :password, as: :password %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn-primary', value: 'Set new password' %>
+  </div>
+<% end %>

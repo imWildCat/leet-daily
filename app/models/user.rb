@@ -8,6 +8,18 @@ class User < ApplicationRecord
   has_secure_password
 
 
+  def send_reset_token(is_reset)
+    token = SecureRandom.hex
+
+    Rails.cache.write(User.pass_reset_token_key(token), self.id, expires_in: 15.days)
+
+    UserNotifierMailer.set_or_reset_password(self, token, is_reset).deliver
+  end
+
+  def self.pass_reset_token_key(token)
+    "pass_reset_#{token}"
+  end
+
   private
 
   def set_default_values

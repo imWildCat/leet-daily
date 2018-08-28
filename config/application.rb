@@ -32,7 +32,7 @@ module LeetDaily
     config.active_job.queue_adapter = :sidekiq
 
     credential_host = Rails.application.credentials[:host]
-    host = Rails.env.development? || !credential_host ? 'localhost' : credential_host
+    host = Rails.env.development? || !credential_host ? 'localhost:3000' : credential_host
     Rails.application.routes.default_url_options[:host] = host
   end
 end
