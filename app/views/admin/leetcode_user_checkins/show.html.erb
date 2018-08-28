@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<p>Leetcode User: <%= @admin_leetcode_user_checkin.leetcode_user.leetcode_id %></p>
+<p>Checkin date: <%= @admin_leetcode_user_checkin.on_date %></p>
+<p>Finished count: <%= @admin_leetcode_user_checkin.finished_count %></p>
+
+<%= link_to 'Edit', edit_admin_leetcode_user_checkin_path(@admin_leetcode_user_checkin) %> |
+<%= link_to 'Back', admin_leetcode_user_checkins_path %>

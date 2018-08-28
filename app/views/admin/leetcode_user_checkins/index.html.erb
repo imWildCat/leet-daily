@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Leetcode User Checkins</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>User</th>
+    <th>Date</th>
+    <th>Finished count</th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @admin_leetcode_user_checkins.each do |admin_leetcode_user_checkin| %>
+    <tr>
+      <td><%= admin_leetcode_user_checkin.id %></td>
+      <td><%= admin_leetcode_user_checkin.leetcode_user.leetcode_id %></td>
+      <td><%= admin_leetcode_user_checkin.on_date %></td>
+      <td><%= admin_leetcode_user_checkin.finished_count %></td>
+      <td><%= link_to 'Show', admin_leetcode_user_checkin_path(admin_leetcode_user_checkin) %></td>
+      <td><%= link_to 'Edit', edit_admin_leetcode_user_checkin_path(admin_leetcode_user_checkin) %></td>
+      <!--        <td><%#= link_to 'Destroy', admin_leetcode_user_checkin_path(admin_leetcode_user_checkin), method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Admin Leetcode User Checkin', new_admin_leetcode_user_checkin_path %>

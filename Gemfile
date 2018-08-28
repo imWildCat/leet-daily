@@ -92,6 +92,8 @@ group :development, :test do
   gem 'minitest-reporters'
 
   gem 'pry-rails'
+
+  gem 'bullet' # N + 1 query check
 end
 
 # Deployment

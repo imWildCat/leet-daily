@@ -1,0 +1,1 @@
+json.partial! "admin_leetcode_user_checkins/admin_leetcode_user_checkin", admin_leetcode_user_checkin: @admin_leetcode_user_checkin

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root to: 'home#index'
     resources :leetcode_users
     resources :site_configs
+    resources :leetcode_user_checkins, only: [:index, :show, :edit, :update]
   end
 
 end

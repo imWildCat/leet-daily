@@ -1,4 +1,4 @@
-class Admin::SiteConfigsController < ApplicationController
+class Admin::SiteConfigsController < Admin::BaseController
   before_action :set_admin_site_config, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/site_configs
