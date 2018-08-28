@@ -63,8 +63,20 @@ namespace :deploy do
   task :copy_file do
     on roles(:all) do |host|
       ['credentials.yml.enc'].each do |f|
-        upload! './config/' + f , "#{shared_path}/config/" + f
+        upload! './config/' + f, "#{shared_path}/config/" + f
       end
     end
   end
+
+  desc 'Db seed'
+  task :seed_db do
+    on primary fetch(:migration_role) do
+      within current_path do
+        with rails_env: fetch(:stage) do
+          execute :bundle, "exec rake db:seed"
+        end
+      end
+    end
+  end
+  after 'deploy:migrate', 'deploy:seed_db'
 end

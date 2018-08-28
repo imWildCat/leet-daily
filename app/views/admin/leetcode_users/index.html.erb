@@ -8,7 +8,7 @@
       LeetCode ID
     </th>
     <th>
-      Joining time
+      Finished
     </th>
     <th colspan="3">Actions</th>
   </tr>
@@ -17,8 +17,8 @@
   <% @users.each do |u| %>
     <tr>
       <td><%= u.id %></td>
-      <td><%= u.leetcode_id %></td>
-      <td><%= time_ago_in_words(u.created_at) %></td>
+      <td><%= link_to u.leetcode_id, "http://leetcode.com/#{u.leetcode_id}", target: '_blank' %></td>
+      <td><%= u.current_finished_count %></td>
       <td><%= link_to 'Edit', edit_admin_leetcode_user_path(u) %></td>
 
     </tr>
