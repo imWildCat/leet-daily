@@ -4,6 +4,7 @@ class CreateLeetcodeUserCheckins < ActiveRecord::Migration[5.2]
       t.references :leetcode_user, foreign_key: true
       t.date :on_date
       t.integer :finished_count
+      t.integer :delta
 
       t.timestamps
     end

@@ -22,7 +22,16 @@ class CheckLeetcodeUserJob < ApplicationJob
 
       checkin = LeetcodeUserCheckin.find_or_initialize_by(leetcode_user: leetcode_user, on_date: Date.today)
 
+      last_checkin = LeetcodeUserCheckin.order(id: :desc).where('on_date < ?', Date.today).find_by(leetcode_user: leetcode_user)
+
+      last_finished_count = 0
+
+      if last_checkin
+        last_finished_count = last_checkin.finished_count
+      end
+
       checkin.finished_count = current_progress
+      checkin.delta = current_progress - last_finished_count
 
       checkin.save
     end
