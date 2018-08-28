@@ -1,0 +1,2 @@
+module Account::ForgetPasswordHelper
+end

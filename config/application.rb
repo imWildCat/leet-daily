@@ -22,7 +22,7 @@ module LeetDaily
     ActionMailer::Base.smtp_settings = {
         :user_name => Rails.application.credentials[:sendgrid_username],
         :password => Rails.application.credentials[:sendgrid_password],
-        :domain => 'leetdaily.com',
+        :domain => Rails.application.credentials[:host],
         :address => 'smtp.sendgrid.net',
         :port => 587,
         :authentication => :plain,
@@ -31,5 +31,8 @@ module LeetDaily
 
     config.active_job.queue_adapter = :sidekiq
 
+    credential_host = Rails.application.credentials[:host]
+    host = Rails.env.development? || !credential_host ? 'localhost' : credential_host
+    Rails.application.routes.default_url_options[:host] = host
   end
 end
