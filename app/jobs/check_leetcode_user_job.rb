@@ -12,9 +12,19 @@ class CheckLeetcodeUserJob < ApplicationJob
     if resp
       html_doc = Nokogiri::HTML(resp)
 
-      real_name = html_doc.css('.realname').text.strip
+      # real_name = html_doc.css('.realname').text.strip
 
-      puts real_name
+      progress_str = html_doc.xpath('//*[@id="base_content"]/div/div/div[1]/div[3]/ul/li[1]/span').text.strip
+
+      # recent_activity_str = html_doc.css('#base_content div.col-sm-7.col-md-8  div > ul > a:nth-child(1) > span.text-muted').text.strip
+
+      current_progress = progress_str[/\d+/].to_i
+
+      checkin = LeetcodeUserCheckin.find_or_initialize_by(leetcode_user: leetcode_user, on_date: Date.today)
+
+      checkin.finished_count = current_progress
+
+      checkin.save
     end
   end
 end

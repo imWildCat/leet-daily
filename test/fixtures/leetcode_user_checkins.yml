@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  leetcode_user: one
+  on_date: 2018-08-28
+  num: 1
+
+two:
+  leetcode_user: two
+  on_date: 2018-08-28
+  num: 1

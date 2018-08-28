@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_23_230608) do
+ActiveRecord::Schema.define(version: 2018_08_28_133039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2018_08_23_230608) do
   create_table "admin_site_configs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "leetcode_user_checkins", force: :cascade do |t|
+    t.bigint "leetcode_user_id"
+    t.date "on_date"
+    t.integer "finished_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["leetcode_user_id", "on_date"], name: "index_leetcode_user_checkins_on_leetcode_user_id_and_on_date", unique: true
+    t.index ["leetcode_user_id"], name: "index_leetcode_user_checkins_on_leetcode_user_id"
   end
 
   create_table "leetcode_users", force: :cascade do |t|
@@ -57,6 +67,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_230608) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "leetcode_user_checkins", "leetcode_users"
   add_foreign_key "leetcode_users", "users"
   add_foreign_key "users", "user_groups"
 end
