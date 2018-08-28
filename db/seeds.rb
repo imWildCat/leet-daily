@@ -22,3 +22,7 @@ if UserGroup.count == 0
                         }
                     ])
 end
+
+unless SiteConfig.find_by_key('report_to_emails')
+  SiteConfig.create(key: 'report_to_emails', description: 'The emails to send reports, separated by commas.')
+end

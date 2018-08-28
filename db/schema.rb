@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_133039) do
   create_table "site_configs", force: :cascade do |t|
     t.string "key", null: false
     t.text "value"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
