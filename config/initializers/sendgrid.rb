@@ -1,7 +1,11 @@
 Rails.application.configure do
-  config.action_mailer.delivery_method = :sendgrid_actionmailer
-  config.action_mailer.sendgrid_actionmailer_settings = {
-      api_key: Rails.application.credentials[:sendgrid_api_key],
-      raise_delivery_errors: true
+  ActionMailer::Base.smtp_settings = {
+      :user_name => Rails.application.credentials[:sendgrid_username],
+      :password => Rails.application.credentials[:sendgrid_password],
+      :domain => 'leetdaily.com',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
   }
 end

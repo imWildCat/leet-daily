@@ -22,7 +22,7 @@ set :repo_url, 'https://github.com/imWildCat/leet-daily.git'
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
-append :linked_files, 'config/database.yml', 'config/master.key'
+append :linked_files, 'config/database.yml', 'config/master.key', 'config/credentials.yml.enc'
 
 before 'deploy:check:linked_files', 'deploy:copy_file'
 
