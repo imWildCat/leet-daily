@@ -1,0 +1,7 @@
+check_in:
+  cron: "*/30 * * * *" # execute at every 30 minutes
+  class: "AllLeetcodeUserCheckinJob"
+#  queue: hard_worker_long
+#  args:
+#    hard: "stuff"
+# Reference: https://github.com/ondrejbartas/sidekiq-cron
