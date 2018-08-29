@@ -5,3 +5,7 @@ check_in:
 #  args:
 #    hard: "stuff"
 # Reference: https://github.com/ondrejbartas/sidekiq-cron
+
+daily_report:
+  cron: "0 6 * * *" # execute at 6.00 am every day
+  class: "DailyReportJob"
