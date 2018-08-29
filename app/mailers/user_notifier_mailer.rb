@@ -1,7 +1,5 @@
 class UserNotifierMailer < ApplicationMailer
 
-  default :from => "LeetDaily <#{Rails.application.credentials[:from_email]}>"
-
   def send_daily_report(user)
     @user = user
     mail(to: @user.email, subject: "LeetDaily report on #{Date.today}")

@@ -1,0 +1,40 @@
+<div>
+
+  <h2>Daily Check-in report: <%= Date.yesterday %></h2>
+
+  <p>
+    Executive summary: there are <%= pluralize(@data[:finished].count, 'person') %>
+    who did finish the daily task yesterday and
+    <strong><%= pluralize(@data[:having_rest].count + @data[:notable].count, 'person') %></strong> did not.
+  </p>
+
+  <p>Details:</p>
+
+  <div>
+    <h3>Cheers:</h3>
+    <ul>
+      <% @data[:finished].each do |c| %>
+        <li><%= c.leetcode_user.leetcode_id %>: <%= c.delta %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Having a break:</h3>
+    <ul>
+      <% @data[:having_rest].each do |c| %>
+        <li><%= c.leetcode_user.leetcode_id %>: <%= c.delta %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Notable (having too many breaks):</h3>
+    <ul>
+      <% @data[:notable].each do |c| %>
+        <li><%= c.leetcode_user.leetcode_id %>: <%= c.delta %></li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
