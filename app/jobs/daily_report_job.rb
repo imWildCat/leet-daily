@@ -5,7 +5,7 @@ class DailyReportJob < ApplicationJob
   WEEKLY_REST_ALLOWED = 2
 
   def perform(*args)
-    checkins = LeetcodeUserCheckin.eager_load(:leetcode_user).where(on_date: Date.today).order(id: :asc).all.to_a
+    checkins = LeetcodeUserCheckin.eager_load(:leetcode_user).where(on_date: Date.yesterday).order(id: :asc).all.to_a
 
     unfinished = checkins.select do |c|
       c.delta < MIN_PROGRESS
