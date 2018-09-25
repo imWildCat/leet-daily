@@ -101,6 +101,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv', '~> 2.1', require: false
   gem 'capistrano3-puma', require: false
+  gem 'capistrano-sidekiq'
 end
 
 gem 'sidekiq', '~> 5.2', '>= 5.2.1'

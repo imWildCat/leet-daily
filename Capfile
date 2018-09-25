@@ -43,7 +43,7 @@ require 'capistrano/puma'
 require 'capistrano/sidekiq'
 # require 'capistrano/sidekiq/monit'
 #
-require 'capistrano/upload-config'
+# require 'capistrano/upload-config'
 
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx
