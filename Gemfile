@@ -113,3 +113,5 @@ gem 'active_scaffold'
 
 # ES6 support
 gem 'sprockets', '~> 4.0.0.beta8'
+
+gem 'kaminari'

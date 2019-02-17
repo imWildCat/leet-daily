@@ -4,7 +4,7 @@ class Admin::LeetcodeUserCheckinsController < Admin::BaseController
   # GET /admin/leetcode_user_checkins
   # GET /admin/leetcode_user_checkins.json
   def index
-    @admin_leetcode_user_checkins = LeetcodeUserCheckin.eager_load(:leetcode_user).all
+    @admin_leetcode_user_checkins = LeetcodeUserCheckin.default_list.page(params[:page])
   end
 
   # GET /admin/leetcode_user_checkins/1
